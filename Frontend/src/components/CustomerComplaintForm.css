@@ -83,6 +83,7 @@
     padding-bottom: 10px;
     text-align: left;
     color:#003366 ;
+    font-size: 20px;
   }
   
   .guidelines-box ol {
@@ -91,7 +92,7 @@
   }
   
   .guidelines-box li {
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     text-align: left;
   }
   .buttons {
@@ -101,23 +102,52 @@
   }
   
   .buttons button {
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     color: white;
   }
   
-  .save-btn { 
+  .submit-btn { 
     background-color: #1565C0;
     height: 35px;
-    width: 70px;
-
+    width: 100px;
+    margin-left: 100px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 7px;
    }
-  .submit-btn { background-color: #1565C0; }
-  .cancel-btn { background-color: #1565C0; }
+
+  .cancel-btn { 
+    background-color: #1565C0;
+    height: 35px;
+    width: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 7px;
+  }
   
-  .save-btn:hover { background-color: #0056b3; }
-  .submit-btn:hover { background-color:#1565C0; }
-  .cancel-btn:hover { background-color: #1565C0; }
+  
+  .submit-btn:hover {
+     background-color:#003366;
+     height: 40px;
+     width: 120px;
+     margin-right: 100px;
+     text-align: center;
+     font-size: 20px;
+     padding-top: 9px;
+     border: 1px solid #EDFAFF;
+     }
+  .cancel-btn:hover { 
+    background-color: #003366;
+    height: 40px;
+    width: 120px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 9px;
+    border: 1px solid #EDFAFF;
+   }
   

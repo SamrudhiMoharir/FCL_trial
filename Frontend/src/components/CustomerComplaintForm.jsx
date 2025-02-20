@@ -101,9 +101,6 @@ const CustomerComplaintForm = () => {
       </ol>
     </div>
           <div className="buttons">
-            <button type="button" className="save-btn">
-              Save
-            </button>
             <button type="submit" className="submit-btn">
               Submit
             </button>
