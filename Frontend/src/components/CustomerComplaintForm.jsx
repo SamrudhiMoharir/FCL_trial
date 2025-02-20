@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CustomerComplaintForm.css";
-import TableComponent from "./TableComponent"; // Import the Table Component
+import TableComponent from "./TableComponent"; 
 
 const CustomerComplaintForm = () => {
   const [formData, setFormData] = useState({
