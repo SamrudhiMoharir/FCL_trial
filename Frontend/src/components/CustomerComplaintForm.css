@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 250vh;
     background-color: #f9f9f9;
     padding: 20px;
   }
 
 .firstbox{
- height: 1100px;
+ height: 1200px;
  border: black solid 2px;
 }
 .form-wrapper {

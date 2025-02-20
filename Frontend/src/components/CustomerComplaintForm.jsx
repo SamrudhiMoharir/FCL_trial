@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CustomerComplaintForm.css";
 import TableComponent from "./TableComponent";
 
 const CustomerComplaintForm = () => {
+  const navigate = useNavigate(); // For navigation after form submission
   const [formData, setFormData] = useState({
     companyCode: "",
     dateRaised: "",
@@ -42,14 +44,32 @@ const CustomerComplaintForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
+
+    // Retrieve existing complaints from localStorage
+    const existingComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+    // Create a new complaint object
+    const newComplaint = {
+      companyCode: formData.companyCode,
+      dateRaised: formData.dateRaised,
+      partNumber: formData.partNumber,
+      mailId: formData.mailId,
+      rejectionQuantity: formData.rejectionQuantity,
+      status: "Pending", // Default status for new complaints
+    };
+
+    // Save updated complaints list to localStorage
+    localStorage.setItem("complaints", JSON.stringify([...existingComplaints, newComplaint]));
+
+    // Redirect to Complaint List page
+    navigate("/");
   };
 
   return (
     <div className="container">
       <div className="form-wrapper">
         <h2 className="form-title">Customer Complaint Form</h2>
-        <h3 className="heading">Customer name and address</h3>
+        <h3 className="heading">Customer Name and Address</h3>
 
         <form onSubmit={handleSubmit} className="firstbox">
           <div className="input-group">
@@ -88,25 +108,20 @@ const CustomerComplaintForm = () => {
           </div>
 
           {/* Render the table component */}
-          <TableComponent
-            rejectionStatement={formData.rejectionStatement}
-            handleStatementChange={handleStatementChange}
-          />
-           <div className="guidelines-box">
-      <h3><strong>Statement Guidelines :</strong></h3>
-      <ol>
-        <li>Be sure to include specific information as to the exact problem, such as where located, how many affected, since when, etc.</li>
-        <li>Be sure to include any existing measurable data, such as deviations in performance values, measured non-conformance features characteristics, etc.</li>
-        <li>Where possible include any supporting photos or documents that illustrate the issue and clarify where possible.</li>
-      </ol>
-    </div>
+          <TableComponent rejectionStatement={formData.rejectionStatement} handleStatementChange={handleStatementChange} />
+
+          <div className="guidelines-box">
+            <h3><strong>Statement Guidelines :</strong></h3>
+            <ol>
+              <li>Be sure to include specific information as to the exact problem, such as where located, how many affected, since when, etc.</li>
+              <li>Be sure to include any existing measurable data, such as deviations in performance values, measured non-conformance features characteristics, etc.</li>
+              <li>Where possible include any supporting photos or documents that illustrate the issue and clarify where possible.</li>
+            </ol>
+          </div>
+
           <div className="buttons">
-            <button type="submit" className="submit-btn">
-              Submit
-            </button>
-            <button type="button" className="cancel-btn">
-              Cancel
-            </button>
+            <button type="submit" className="submit-btn">Submit</button>
+            <button type="button" className="cancel-btn" onClick={() => navigate("/")}>Cancel</button>
           </div>
         </form>
       </div>

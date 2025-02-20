@@ -5,10 +5,13 @@
   }
   
   .problem-table td {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 8px;
+
   }
-  
+  th:nth-child(1), td:nth-child(1) { /* First column (Label) */
+    width: 47%;
+}
   .bold-text {
     font-weight: bold;
     text-align: left;
@@ -17,6 +20,7 @@
   .input-cell input {
     width: 100%;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
+    padding-right: 2px;
   }
   
