@@ -70,7 +70,30 @@
     width:500px;
     margin-left: 25px;
   }
+  .guidelines-box {
+    border: 1px solid #000;
+    background-color: #EDFAFF;
+    padding: 15px;
+    margin: 10px 0;
+    
+  }
   
+  .guidelines-box h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: left;
+    color:#003366 ;
+  }
+  
+  .guidelines-box ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .guidelines-box li {
+    margin-bottom: 8px;
+    text-align: left;
+  }
   .buttons {
     display: flex;
     justify-content: space-between;
@@ -85,7 +108,12 @@
     color: white;
   }
   
-  .save-btn { background-color: #1565C0; }
+  .save-btn { 
+    background-color: #1565C0;
+    height: 35px;
+    width: 70px;
+
+   }
   .submit-btn { background-color: #1565C0; }
   .cancel-btn { background-color: #1565C0; }
   

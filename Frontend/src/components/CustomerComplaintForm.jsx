@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CustomerComplaintForm.css";
-import TableComponent from "./TableComponent"; 
+import TableComponent from "./TableComponent";
 
 const CustomerComplaintForm = () => {
   const [formData, setFormData] = useState({
@@ -92,7 +92,14 @@ const CustomerComplaintForm = () => {
             rejectionStatement={formData.rejectionStatement}
             handleStatementChange={handleStatementChange}
           />
-
+           <div className="guidelines-box">
+      <h3><strong>Statement Guidelines :</strong></h3>
+      <ol>
+        <li>Be sure to include specific information as to the exact problem, such as where located, how many affected, since when, etc.</li>
+        <li>Be sure to include any existing measurable data, such as deviations in performance values, measured non-conformance features characteristics, etc.</li>
+        <li>Where possible include any supporting photos or documents that illustrate the issue and clarify where possible.</li>
+      </ol>
+    </div>
           <div className="buttons">
             <button type="button" className="save-btn">
               Save
