@@ -84,7 +84,7 @@ const CustomerComplaintForm = () => {
           <hr />
 
           <div className="input-group">
-            <label>Rejection Statement:</label>
+            <h3>Rejection Statement:</h3>
           </div>
 
           {/* Render the table component */}

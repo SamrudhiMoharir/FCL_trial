@@ -51,8 +51,22 @@
     flex-direction: column;
     margin-bottom: 5px;
     text-align: left;
+    
   }
-  
+  .input-group h3{
+    text-align: left;
+    font-size: 20px;
+    font-weight: semi bold;
+    color: #003366;
+    margin-top: 10px;
+    height: 35px;
+    border: 2px solid #003366;
+    border-left: none;
+    border-right: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: #EDFAFF;
+  }
   .input-group label {
     font-weight: bold;
     font-size: 16px;
@@ -69,6 +83,7 @@
     border-radius: 5px; 
     width:500px;
     margin-left: 25px;
+    color:#545454;
   }
   .guidelines-box {
     border: 1px solid #000;
