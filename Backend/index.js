@@ -4,7 +4,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 // import authRoutes from "./routes/auth.route.js"
-import complaintRoutes from "./routes/complaint.routes.js"
 
 import { connectDB } from "./db/connectDB.js";
 
@@ -20,7 +19,9 @@ app.use(cors({
 app.use(express.json());  //allows to parse incoming requests from req.body
 app.use(cookieParser());
 
-// app.use("/api/auth", authRoutes);
+
+
+import complaintRoutes from "./routes/complaint.routes.js"
 app.use("/api/complaint", complaintRoutes);
 
 app.listen(PORT, () => {

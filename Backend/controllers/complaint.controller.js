@@ -15,7 +15,8 @@ export const newComplaint = async (req, res) => {
       where,
       who,
       how,
-      howMuch
+      howMuch,
+      status
     } = req.body;
 
     // Access file info (if any)
@@ -43,7 +44,8 @@ export const newComplaint = async (req, res) => {
         who,
         how,
         howMuch
-      }
+      },
+    status
     };
 
     // If you want to store file paths
@@ -72,3 +74,27 @@ export const newComplaint = async (req, res) => {
     });
   }
 };
+
+export const getComplaints = async (req, res) => {
+  try {
+    const complaints = await Complaint.find({});
+    
+    console.log(complaints);
+
+    return res
+    .status(200)
+    .json({
+      success: true,
+      data: complaints
+    })
+
+  } catch (error) {
+    console.error("Error fetching complaints:", error);
+    return res
+    .status(500)
+    .json({ 
+       success: false,
+       message: error.message
+    });
+  }
+}

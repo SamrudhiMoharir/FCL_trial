@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ComplaintList.css";
+import axios from "axios";
 
 const ComplaintList = () => {
   const navigate = useNavigate();
@@ -9,8 +10,18 @@ const ComplaintList = () => {
 
   // Load complaints from localStorage
   useEffect(() => {
-    const storedComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
-    setComplaints(storedComplaints);
+    // const storedComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
+    // setComplaints(storedComplaints);
+
+    axios
+    .get("http://localhost:5000/api/complaint/get-complaints")
+    .then((response) => {
+      setComplaints(response.data.data || response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching complaints:", error);
+    })
+
   }, []);
 
   // Function to generate 8-dot progress indicators
@@ -53,14 +64,14 @@ const ComplaintList = () => {
                 {complaints.length > 0 ? (
                   complaints
                     .filter(
-                      (complaint) => filter === "All" || complaint.status === filter
+                      (complaint) => filter === "All" || complaint.status.toLowerCase() === filter.toLowerCase()
                     )
                     .map((complaint, index) => (
                       <tr key={index} className="complaint-row">
                         <td className="complaint-id">{index + 1}</td>
                         <td className="complaint-company">{complaint.companyCode}</td>
                         <td className="complaint-status">
-                          <span className={`status ${complaint.status.toLowerCase()}`}>
+                          <span className={`status ${complaint.status}`}>
                             {complaint.status}
                           </span>
                           <div className="progress-dots">

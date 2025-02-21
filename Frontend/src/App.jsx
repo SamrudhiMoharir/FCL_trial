@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import ComplaintList from './components/ComplaintList';
+import ComplaintList from './components/ComplaintList.jsx';
 import CustomerComplaintForm from './components/CustomerComplaintForm';
 
 function App() {

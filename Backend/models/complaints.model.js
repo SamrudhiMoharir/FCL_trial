@@ -35,6 +35,12 @@ const complaintSchema = new mongoose.Schema({
     who: { type: String },
     how: { type: String },
     howMuch: { type: String }
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ["pending", "in progress", "resolved"],
+    default: "pending"
   }
 }, { timestamps: true });
 
