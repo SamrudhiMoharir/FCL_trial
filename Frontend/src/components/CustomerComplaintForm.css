@@ -1,5 +1,4 @@
 /* CustomerComplaintForm.css */
-
 .container {
     display: flex;
     justify-content: center;
@@ -21,6 +20,7 @@
     max-width: 600px;
     width: 100%;
     border: 1px solid #ddd;
+    margin-top: 750px;
 }
   .heading{
     text-align: left;
@@ -28,23 +28,28 @@
     font-weight: semi bold;
     color: #003366;
     margin-bottom: 10px;
+    margin-top: 10px;
     height: 35px;
+    width:800px;
     border: 2px solid #003366;
-    padding-top: 7px;
-    padding-left: 5px;
+    padding-top: 5px;
     background-color: #EDFAFF;
+    
   }
   .form-title {
     text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: #003366;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    width:800px;
     height: 100px;
     border: 2px solid #003366;
     padding-top: 35px;
     background-color: #EDFAFF;
+  
   }
+    
   
   .input-group {
     display: flex;

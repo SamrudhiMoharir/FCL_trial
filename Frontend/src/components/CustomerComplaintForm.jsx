@@ -72,7 +72,7 @@ const CustomerComplaintForm = () => {
     // // Redirect to Complaint List page
     // navigate("/");
 
-    const data = new FormData();
+  const data = new FormData();
   data.append("companyCode", formData.companyCode);
   data.append("dateRaised", formData.dateRaised);
   data.append("partNumber", formData.partNumber);
@@ -108,7 +108,7 @@ const CustomerComplaintForm = () => {
     <div className="container">
       <div className="form-wrapper">
         <h2 className="form-title">Customer Complaint Form</h2>
-        <h3 className="heading">Customer Name and Address</h3>
+        <h3 className="heading">&nbsp;Customer Name and Address</h3>
 
         <form onSubmit={handleSubmit} className="firstbox">
           <div className="input-group">
@@ -146,7 +146,6 @@ const CustomerComplaintForm = () => {
             <h3>Rejection Statement:</h3>
           </div>
 
-          {/* Render the table component */}
           <TableComponent rejectionStatement={formData.rejectionStatement} handleStatementChange={handleStatementChange} />
 
           <div className="guidelines-box">
