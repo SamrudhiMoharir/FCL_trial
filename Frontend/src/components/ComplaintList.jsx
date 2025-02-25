@@ -8,38 +8,32 @@ const ComplaintList = () => {
   const [complaints, setComplaints] = useState([]);
   const [filter, setFilter] = useState("All");
 
-  // Load complaints from localStorage
   useEffect(() => {
-    // const storedComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
-    // setComplaints(storedComplaints);
-
     axios
-    .get("http://localhost:5000/api/complaint/get-complaints")
-    .then((response) => {
-      setComplaints(response.data.data || response.data);
-    })
-    .catch((error) => {
-      console.error("Error fetching complaints:", error);
-    })
-
+      .get("http://localhost:5000/api/complaint/get-complaints")
+      .then((response) => {
+        setComplaints(response.data.data || response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching complaints:", error);
+      });
   }, []);
 
-  // Function to generate 8-dot progress indicators
   const getProgressDots = (status) => {
     const totalDots = 8;
     let filledDots = 0;
 
     if (status === "Pending") filledDots = 0;
-    if (status === "In Progress") filledDots = Math.ceil(totalDots / 2);
+    if (status === "In Progress") filledDots = Math.ceil(totalDots / 3);
     if (status === "Resolved") filledDots = totalDots;
 
-    return Array.from({ length: totalDots }, (_, i) =>
-      i < filledDots ? "●" : "○"
-    ).join(" ");
+    return Array.from({ length: totalDots }, (_, i) => (
+      <span key={i} className={`dot ${i < filledDots ? status.toLowerCase() : "empty"}`}></span>
+    ));
   };
 
   return (
-    <div className="container">
+    <div className="container" >
       <div className="form-wrapper">
         <div className="complaint-list-container">
           <h2 className="title">Complaint List</h2>
@@ -64,27 +58,24 @@ const ComplaintList = () => {
                 {complaints.length > 0 ? (
                   complaints
                     .filter(
-                      (complaint) => filter === "All" || complaint.status.toLowerCase() === filter.toLowerCase()
+                      (complaint) =>
+                        filter === "All" || complaint.status.toLowerCase() === filter.toLowerCase()
                     )
                     .map((complaint, index) => (
                       <tr key={index} className="complaint-row">
                         <td className="complaint-id">{index + 1}</td>
                         <td className="complaint-company">{complaint.companyCode}</td>
-                        <td className="complaint-status">
-                          <span className={`status ${complaint.status}`}>
-                            {complaint.status}
-                          </span>
-                          <div className="progress-dots">
-                            {getProgressDots(complaint.status)}
-                          </div>
+                        <td className="complaint-progress">
+                          <div className="progress-dots">{getProgressDots(complaint.status)}</div>
+                        </td>
+                        <td className={`complaint-status ${complaint.status.toLowerCase()}`}>
+                          {complaint.status}
                         </td>
                       </tr>
                     ))
                 ) : (
                   <tr>
-                    <td colSpan="3" className="no-complaints">
-                      No complaints found
-                    </td>
+                    <td colSpan="4" className="no-complaints">No complaints found</td>
                   </tr>
                 )}
               </tbody>
@@ -92,10 +83,7 @@ const ComplaintList = () => {
           </div>
 
           {/* New Complaint Button */}
-          <button
-            className="new-complaint-btn"
-            onClick={() => navigate("/new-complaint")}
-          >
+          <button className="new-complaint-btn" onClick={() => navigate("/new-complaint")}>
             New Complaint
           </button>
         </div>
