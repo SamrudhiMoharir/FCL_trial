@@ -105,8 +105,8 @@ const CustomerComplaintForm = () => {
   };
 
   return (
-    <div className="container">
-      <div className="form-wrapper">
+    <div className="contain">
+      <div className="wrapper">
         <h2 className="form-title">Customer Complaint Form</h2>
         <h3 className="heading">&nbsp;Customer Name and Address</h3>
 
