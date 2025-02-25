@@ -1,54 +1,62 @@
-/* Container styling */
+/* General container settings */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
+  margin-top: -200px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
   width: 100%;
-  background-color: #f9f9f9;
+  background-image: linear-gradient(#d1ecf7, #ffffff);
   padding: 20px;
 }
 
 .form-wrapper {
   background: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   padding: 20px;
-  max-width: 800px;
+  min-width: 900px;
   width: 100%;
   border: 1px solid #ddd;
-  min-height: 100vh;
-}
-
-.complaint-list-container {
-  font-family: "Yesava One", sans-serif;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  color: #003366;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  width: 600px;
 }
 
+/* Complaint List Title */
 .title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-family: "Yesava One", sans-serif;
+  color: #003366;
 }
 
-/* Filter buttons */
+/* Filter Buttons */
 .filter-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .filter-buttons button {
   background-color: #1565c0;
   height: 35px;
-  width: 120px;
-  margin-top: 20px;
+  width: 130px;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   border: 2px solid #1565c0;
   border-radius: 10px;
   color: white;
@@ -61,7 +69,7 @@
   background-color: #003366;
 }
 
-/* Table styling */
+/* Table Styling */
 .complaint-table-wrapper {
   display: flex;
   justify-content: center;
@@ -93,40 +101,26 @@
   text-align: center;
 }
 
-.complaint-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.complaint-number {
-  font-weight: bold;
-  font-size: 20px;
-  color: #003366;
-  width: 10%;
-}
-
-.company-code {
-  font-weight: bold;
-  font-size: 18px;
-  width: 15%;
-}
-
-.status-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 40%;
-}
-
-.status {
+/* Status Colors */
+.complaint-status {
   font-weight: bold;
   font-size: 16px;
   color: #003366;
 }
 
-/* Progress dots */
+.pending {
+  color: grey;
+}
+
+.in-progress {
+  color: blue;
+}
+
+.resolved {
+  color: green;
+}
+
+/* Progress Dots */
 .progress-dots {
   display: flex;
   gap: 5px;
@@ -140,9 +134,8 @@
   background-color: transparent;
 }
 
-/* Status-based dot colors */
 .pending .dot {
-  background-color: white;
+  background-color: grey;
 }
 
 .in-progress .dot:nth-child(-n+3) {
@@ -153,7 +146,7 @@
   background-color: green;
 }
 
-/* No complaints message */
+/* No Complaints */
 .no-complaints {
   text-align: center;
   font-size: 18px;
@@ -166,7 +159,7 @@
   background-color: #1565c0;
   height: 40px;
   width: 220px;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
