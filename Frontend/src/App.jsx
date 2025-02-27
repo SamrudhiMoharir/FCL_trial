@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import ComplaintList from './components/ComplaintList.jsx';
 import CustomerComplaintForm from './components/CustomerComplaintForm.jsx';
-import EightD from './components/EightD.jsx';
+import VEightD from './components/VEightD.jsx';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ComplaintList />} />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-        <Route path="/complaint/:id" element={<EightD />} /> {/* ✅ Add this */}
+        <Route path="/complaint" element={<VEightD />} /> {/* ✅ Add this */}
       </Routes>
     </Router>
   );
