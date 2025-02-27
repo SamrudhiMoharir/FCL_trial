@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import ComplaintList from './components/ComplaintList.jsx';
 import CustomerComplaintForm from './components/CustomerComplaintForm.jsx';
-import 8D from '.components\8D.jsx';
+import EightD from './components/EightD.jsx';
 
 function App() {
   return (
