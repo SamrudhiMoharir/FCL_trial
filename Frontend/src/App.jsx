@@ -9,9 +9,10 @@ function App() {
       <Routes>
         <Route path="/" element={<ComplaintList />} />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
+        <Route path="/complaint/:id" element={<EightD />} /> {/* ✅ Add this */}
       </Routes>
     </Router>
   );
 }
-
 export default App;
+

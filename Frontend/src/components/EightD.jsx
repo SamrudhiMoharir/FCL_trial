@@ -1,35 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ Added Link
 import axios from "axios";
+import { FaDownload } from "react-icons/fa";
 import "./EightD.css";
 
-const ComplaintDetails = () => {
-  const { id } = useParams();
-  const [complaint, setComplaint] = useState(null);
+const ComplaintList = () => {
+  const [complaints, setComplaints] = useState([]); // ✅ Define complaints array
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/complaint/${id}`)
-      .then((response) => {
-        setComplaint(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching complaint details:", error);
-      });
-  }, [id]);
-
-  if (!complaint) {
-    return <p>Loading complaint details...</p>;
-  }
+      .get("http://localhost:5000/api/complaints") // ✅ Fetch complaints list
+      .then((response) => setComplaints(response.data))
+      .catch((error) => console.error("Error fetching complaints:", error));
+  }, []);
 
   return (
-    <div className="complaint-details-container">
-      <h1>8 D's</h1>
-      <h2>{complaint.companyCode}</h2>
-      <p>Status: {complaint.status}</p>
-      {/* Add more details as needed */}
+    <div className="complaint-list-container">
+      <h1>8 D’s</h1>
+      <div className="table-header">
+        <span>CAR no. -</span>
+        <span>Company name -</span>
+      </div>
+
+      {/* ✅ Map through complaints array */}
+      <div className="complaint-list">
+        {complaints.map((complaint) => (
+          <Link to={`/complaint/${complaint.id}`} key={complaint.id} className="complaint-item">
+            <span className="complaint-id">{complaint.id}</span>
+            <span className="complaint-name">{complaint.companyCode}</span>
+            <FaDownload className="download-icon" />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default ComplaintDetails;
+export default ComplaintList; // ✅ FIXED: Correctly exporting ComplaintList

@@ -10,7 +10,7 @@ const ComplaintList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/complaint/get-complaints")
+      .get("http://localhost:5000/api/complaint/get-complaints") // ✅ Fixed Axios request
       .then((response) => {
         setComplaints(response.data.data || response.data);
       })
@@ -33,7 +33,7 @@ const ComplaintList = () => {
   };
 
   return (
-    <div className="container" >
+    <div className="container">
       <div className="form-wrapper">
         <div className="complaint-list-container">
           <h2 className="title">Complaint List</h2>
@@ -64,7 +64,14 @@ const ComplaintList = () => {
                     .map((complaint, index) => (
                       <tr key={index} className="complaint-row">
                         <td className="complaint-id">{index + 1}</td>
-                        <td className="complaint-company">{complaint.companyCode}</td>
+                        {/* ✅ Added `onClick` inside `.map()` */}
+                        <td
+                          className="complaint-company"
+                          onClick={() => navigate(`/complaint/${complaint._id}`)}
+                          style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
+                        >
+                          {complaint.companyCode}
+                        </td>
                         <td className="complaint-progress">
                           <div className="progress-dots">{getProgressDots(complaint.status)}</div>
                         </td>
