@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ComplaintList />} />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-        <Route path="/complaint" element={<EightD />} />
+        <Route path="/complaint/:id" element={<EightD />} />
       </Routes>
     </Router>
   );
