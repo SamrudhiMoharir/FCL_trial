@@ -8,7 +8,7 @@ const OneD = () => {
     const { D } = useParams(); // Get dynamic D value from URL
 
     return (
-        <div className="page-container">
+        <div className="OneD-container">
             {/* Navigation Bar */}
             <header className="navbar">
                 <FaBars className="menu-icon" />

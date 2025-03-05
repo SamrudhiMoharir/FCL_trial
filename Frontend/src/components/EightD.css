@@ -1,10 +1,10 @@
 /* Overall page styling */
-.page-container {
+.EightD-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff; 
+  background-image: linear-gradient(#d1ecf7, #ffffff);
   padding: 20px;
   box-sizing: border-box;
 }

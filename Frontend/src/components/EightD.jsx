@@ -14,7 +14,7 @@ const EightD = () => {
     };
 
     return (
-        <div className="page-container">
+        <div className="EightD-container">
             {/* Navigation Bar */}
             <header className="navbar">
                 <div className="navbar-left">

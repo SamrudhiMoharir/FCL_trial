@@ -1,53 +1,74 @@
-.page-container {
-    font-family: Arial, sans-serif;
+.OneD-container {
     padding: 20px;
     text-align: center;
+    min-height: 100vh;
+    min-width: 1000px;
+    margin: 0 auto;
+    background-image: white;
+    box-sizing: border-box;
+    border:2px solid black;
+    border-radius: 20px;
   }
   
   .navbar {
     display: flex;
+    font-family: Yesava One;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #fff;
-    border-bottom: 2px solid #ccc;
+    background-color:#EDFAFF;
+    color:#003366;
+    border: 2px solid black;
+    border-radius: 20px;
+    
   }
   
   .menu-icon, .nav-icon {
     font-size: 20px;
     cursor: pointer;
+    color: #000;
   }
   
   .navbar-title {
-    font-size: 24px;
+    font-size: 35px ;
     font-weight: bold;
   }
   
   .progress-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 20px 0;
     gap: 10px;
+    border:1px solid black;
+    border-radius: 20px;
+    background-color: #1E6DC1;
   }
   
   .progress-btn {
-    background-color: #1E6DC1;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    /* padding: 10px 15px; */
     cursor: pointer;
+    background-color: none;
+    font-size: 25px;
+    border:none;
+    background-color: #1E6DC1;
+    margin-left: 20px;
+
   }
   
   .progress-view {
     font-size: 18px;
+    color: white;
+    font-size: 25px;
   }
   
   .section-title {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 20px;
+    color: #003366;
+    font-family: Yesava One;
   }
   
   .team-table {
@@ -57,8 +78,14 @@
   }
   
   .team-table th, .team-table td {
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px;
+  }
+  .team-table th {
+    color: #003366;
+    font-family: Yesava One;
+    font-size: 20px; 
+    font-weight: medium;
   }
   
   .team-table th {
@@ -69,6 +96,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+
   }
   
   .next-step, .back-btn {
@@ -78,5 +106,8 @@
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Yesava One;
+    font-size: 20px; 
+    font-weight: medium;
   }
   
