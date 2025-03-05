@@ -31,9 +31,9 @@ const EightD = () => {
             {/* Table Header */}
             <div className="table-header">
                 <div className="table-label">CAR no.</div>
-                <input type="text" className="input-field" placeholder="Enter CAR no." />
+                {/* <input type="text" className="input-field" placeholder="Enter CAR no." /> */}
                 <div className="table-label">Company name</div>
-                <input type="text" className="input-field" placeholder="Enter Company name" />
+                {/* <input type="text" className="input-field" placeholder="Enter Company name" /> */}
             </div>
 
             {/* Centered Buttons with Data */}

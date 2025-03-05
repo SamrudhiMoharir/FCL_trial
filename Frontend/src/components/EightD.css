@@ -59,7 +59,7 @@
 /* Table header*/
 .table-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
   background-color: #e3f2fd;
