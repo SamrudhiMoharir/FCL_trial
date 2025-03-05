@@ -1,12 +1,17 @@
-
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./EightD.css";
 import { FaBars, FaUser } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 
 const EightD = () => {
-    const data = ["D1", "D2", "D3", "D4", "D5", "D6","D7","D8"];
+    const navigate = useNavigate();
+    const data = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8"];
+
+    const handleNavigation = (item) => {
+        navigate(`/EightD/${item}`); // Navigate to the respective D page
+    };
 
     return (
         <div className="page-container">
@@ -23,7 +28,7 @@ const EightD = () => {
                 </div>
             </header>
 
-            {/* Table Header*/}
+            {/* Table Header */}
             <div className="table-header">
                 <div className="table-label">CAR no.</div>
                 <input type="text" className="input-field" placeholder="Enter CAR no." />
@@ -34,7 +39,11 @@ const EightD = () => {
             {/* Centered Buttons with Data */}
             <div className="button-list">
                 {data.map((item, index) => (
-                    <div className="list-item" key={index}>
+                    <div
+                        className="list-item"
+                        key={index}
+                        onClick={() => handleNavigation(item)} // Click to navigate
+                    >
                         <span className="item-number">{index + 1}</span>
                         <span className="item-label">{item}</span>
                         <MdOutlineDownloadForOffline className="download-icon" />
