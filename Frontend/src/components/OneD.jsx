@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import "./oneD.css";
 import { FaBars, FaUser } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
+import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const OneD = () => {
     const { D } = useParams(); // Get dynamic D value from URL
@@ -24,7 +26,10 @@ const OneD = () => {
             <div className="progress-bar">
                 <button className="progress-btn active">Complain Form</button>
                 <span className="progress-view">👁️ View</span>
-                <button className="progress-btn submitted">Submitted ⬇</button>
+                <button className="progress-btn submitted">Submitted </button>
+                <button className="download-btn">
+                    <MdOutlineDownloadForOffline size={24} />
+                </button>
             </div>
 
             {/* Assigned Team Table */}
@@ -48,7 +53,9 @@ const OneD = () => {
             {/* Navigation Buttons */}
             <div className="nav-buttons">
                 <button className="next-step">Next Step</button>
-                <button className="back-btn">⬅</button>
+                <button className="back-btn">
+                    <FaLongArrowAltLeft size={40}/>
+                </button>
             </div>
         </div>
     );
