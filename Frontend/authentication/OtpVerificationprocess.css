@@ -1,0 +1,66 @@
+/* Fullscreen Centering */
+.otp-process-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eef8ff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+  }
+  
+  /* OTP Box Styling */
+  .otp-process-box p {
+    font-size: 16px;
+    color: #4a4a4a;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* OTP Star Display */
+  .otp-stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .otp-stars span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #fff;
+    color: black;
+  }
+  
+  /* Disabled Button Styling */
+  .otp-process-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #aac4e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: not-allowed;
+  }
+  
+  /* Processing Text */
+  .processing-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #4a4a4a;
+  }
+  

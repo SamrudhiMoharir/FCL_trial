@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ComplaintList />} />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-        <Route path="/complaint/:id" element={<EightD />} />
+        <Route path="/complaint/:id"  element={<EightD />} />
         <Route path="/EightD/:D" element={<OneD />} /> {/* Handle all D pages dynamically */}
       </Routes>
     </Router>
