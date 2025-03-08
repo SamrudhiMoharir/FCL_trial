@@ -78,6 +78,9 @@ const ComplaintList = () => {
                         <td className={`complaint-status ${complaint.status.toLowerCase()}`}>
                           {complaint.status}
                         </td>
+                        {/* <td className={`complaint-status ${complaint.status.toLowerCase()}`}>
+                          {complaint.CARNo}
+                        </td> */}
                       </tr>
                     ))
                 ) : (

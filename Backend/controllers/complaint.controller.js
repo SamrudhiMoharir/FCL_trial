@@ -16,7 +16,8 @@ export const newComplaint = async (req, res) => {
       who,
       how,
       howMuch,
-      status
+      status,
+      CARNo
     } = req.body;
 
     // Access file info (if any)
@@ -45,7 +46,8 @@ export const newComplaint = async (req, res) => {
         how,
         howMuch
       },
-    status
+    status,
+    CARNo
     };
 
     // If you want to store file paths
