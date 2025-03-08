@@ -4,7 +4,9 @@ import { randomUUID } from "crypto";
 
 import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.utils.js";
 import { User } from "../models/user.model.js";
-import { sendVerificationEmail, sendWelcomeEmail, sendResetPasswordEmail, sendPasswordResetSuccess } from "../mailtrap/emails.js";
+import { sendVerificationEmail, sendWelcomeEmail, sendResetPasswordEmail, sendPasswordResetSuccess } from "../nodemailer/nodemailer.js";
+
+let logged = false;
 
 const signup = async (req,res) => {
     // res.send("Signup route");
@@ -133,7 +135,7 @@ const login = async (req,res) => {
         }
 
         generateTokenAndSetCookie(res, user._id);
-
+        logged = true;
         user.lastLogin = new Date()
 
         return res
@@ -161,13 +163,26 @@ const login = async (req,res) => {
 }
 
 const logout = async (req,res) => {
-    res
-    .status(200)
-    .clearCookie("token")
-    .json({
-        success: true,
-        message: "User Logged Out Successfully"
-    })
+    if(logged === true) {
+            res
+            .status(200)
+            .clearCookie("token")
+            .json({
+                success: true,
+                message: "User Logged Out Successfully"
+            })
+    }
+
+    else {
+        res
+        .status(400)
+        .json({
+            success: false,
+            message: "User not logged in"
+        })
+    }
+
+
 }
 
 const forgotPassword = async (req,res) => {
