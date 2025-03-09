@@ -7,7 +7,7 @@ const OtpVerificationProcess = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/set-new-password");
+      navigate("/login");
     }, 3000);
   }, [navigate]);
 

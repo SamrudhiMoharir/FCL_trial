@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
 
@@ -21,6 +22,7 @@ export const useAuthStore = create((set) => ({
         set({user: response.data.user, isLoading: false, isAuthenticated: true})
 
     } catch (error) {
+        toast.error(error.response.data.message)
         set({isLoading: false, error: error.response?.data?.message || "error signing up"})
         throw error;
     }
@@ -60,6 +62,7 @@ export const useAuthStore = create((set) => ({
         set({isAuthenticated:true, isLoading: false, user: response.data.user})
 
     } catch (error) {
+        toast.error(error.response.data.message)
         set({isLoading: false, error: error.response.data.message});
         throw error;
     }

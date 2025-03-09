@@ -1,8 +1,11 @@
 
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./SetNewPassword.css";
+
+import { useAuthStore } from "../store/useAuthStore";
+import toast from "react-hot-toast";
 
 const SetNewPassword = () => {
   const [password, setPassword] = useState("");
@@ -10,15 +13,29 @@ const SetNewPassword = () => {
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const {resetPassword, message} = useAuthStore();
+
+  const {token} = useParams();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
-      setShowError(true);
-    } else {
-      setShowError(false);
-    //   alert("Password updated successfully!");
-      navigate("/password-reset");
-    }
+			alert("Passwords do not match");
+			return;
+		}
+		try {
+			await resetPassword(token, password);
+
+			toast.success("Password reset successfully, redirecting to login page...");
+			setTimeout(() => {
+				navigate("/password-reset");
+			}, 2000);
+		} catch (error) {
+			console.error(error);
+			toast.error(error.message || "Error resetting password");
+		}
+
   };
 
   return (

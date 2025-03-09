@@ -4,15 +4,19 @@ import CustomerComplaintForm from "./components/CustomerComplaintForm.jsx";
 import EightD from "./components/EightD.jsx";
 import OneD from "./components/OneD.jsx";
 import { useAuthStore } from "./store/useAuthStore.js";
+import { useEffect } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
-import Dashboard from "./pages/Dashboard.jsx"
-import SignUpPage from "./pages/SignUpPage.jsx"
-import LoginPage from "./pages/LoginPage.jsx"
-import EmailVerificationPage from "./pages/EmailVerificationPage.jsx"
+import SignUp from "./authentication/SignUp.jsx";
+import Login from "./authentication/Login.jsx";
+import OtpVerification from "./authentication/OtpVerification.jsx";
+import OtpVerificationProcess from "./authentication/OtpVerificationprocess.jsx";
+import SetNewPassword from "./authentication/SetNewPassword.jsx";
+import PasswordReset from "./authentication/PasswordReset.jsx";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx"
 import ResetPasswordPage from "./pages/ResetPasswordPage.jsx"
 import Error404 from "./pages/Error404.jsx"
-import { useEffect } from "react";
+import ForgotPassword from "./authentication/ForgotPassword.jsx";
 
 
 // protect routes that require authentication
@@ -54,6 +58,7 @@ function App() {
   console.log("user", user)
 
   return (
+    <>
     <Router>
       <Routes>
 
@@ -62,7 +67,7 @@ function App() {
             path="/signup" 
             element={
               <RedirectAuthenticatedUser>
-                <SignUpPage />
+                <SignUp />
               </RedirectAuthenticatedUser>
             } 
           />    
@@ -71,7 +76,7 @@ function App() {
             path="/login" 
             element={
               <RedirectAuthenticatedUser>
-                <LoginPage />
+                <Login />
               </RedirectAuthenticatedUser>
             }
           /> 
@@ -79,15 +84,37 @@ function App() {
           <Route 
             path="/verify-email" 
             element={
-              <EmailVerificationPage />
+              <OtpVerification />
             } 
           />
+          
+          <Route 
+            path="/otp-verification-process" 
+            element={
+              <OtpVerificationProcess />
+            } 
+          />
+          
+          <Route 
+            path="/set-new-password" 
+            element={
+              <SetNewPassword />
+            } 
+          />
+
+          <Route 
+            path="/password-reset" 
+            element={
+              <PasswordReset />
+            } 
+          />
+
 
           <Route 
             path="/forgot-password"
             element={
               <RedirectAuthenticatedUser>
-                <ForgotPasswordPage />
+                <ForgotPassword />
               </RedirectAuthenticatedUser>
             }
           />
@@ -96,7 +123,7 @@ function App() {
             path="/reset-password/:token"
             element={
               <RedirectAuthenticatedUser>
-                <ResetPasswordPage />
+                <SetNewPassword />
               </RedirectAuthenticatedUser>
             }
           />
@@ -123,6 +150,8 @@ function App() {
         <Route path="/EightD/:D" element={<OneD />} /> {/* Handle all D pages dynamically */}
       </Routes>
     </Router>
+    <Toaster />
+    </>
   );
 }
 
