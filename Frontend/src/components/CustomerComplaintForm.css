@@ -75,6 +75,7 @@ html, body {
     flex-direction: column;
     margin-bottom: 5px;
     text-align: left;
+  align-items: flex-start;
     
   }
   .input-group h3{
@@ -105,9 +106,11 @@ html, body {
     padding: 8px;
     border: 1px solid #545454;
     border-radius: 5px; 
-    width:500px;
-    margin-left: 25px;
+    /* width:500px;
+    margin-left: 25px; */
     color:#545454;
+    width: calc(100% - 50px); /* Adjust width */
+    margin-left: 10px; 
   }
   .guidelines-box {
     border: 1px solid #000;
@@ -189,4 +192,3 @@ html, body {
     padding-top: 9px;
     border: 1px solid #EDFAFF;
    }
-  

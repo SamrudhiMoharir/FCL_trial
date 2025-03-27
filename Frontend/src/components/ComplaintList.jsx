@@ -91,7 +91,6 @@ const ComplaintList = () => {
               </tbody>
             </table>
           </div>
-
           {/* New Complaint Button */}
           <button className="new-complaint-btn" onClick={() => navigate("/new-complaint")}>
             New Complaint

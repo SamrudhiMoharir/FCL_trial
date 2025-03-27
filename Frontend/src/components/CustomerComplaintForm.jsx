@@ -53,24 +53,6 @@ const CustomerComplaintForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Retrieve existing complaints from localStorage
-    // const existingComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
-
-    // // Create a new complaint object
-    // const newComplaint = {
-    //   companyCode: formData.companyCode,
-    //   dateRaised: formData.dateRaised,
-    //   partNumber: formData.partNumber,
-    //   mailId: formData.mailId,
-    //   rejectionQuantity: formData.rejectionQuantity,
-    //   status: "Pending", // Default status for new complaints
-    // };
-
-    // // Save updated complaints list to localStorage
-    // localStorage.setItem("complaints", JSON.stringify([...existingComplaints, newComplaint]));
-
-    // // Redirect to Complaint List page
-    // navigate("/");
 
   const data = new FormData();
   data.append("companyCode", formData.companyCode);
