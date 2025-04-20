@@ -3,6 +3,9 @@ import ComplaintList from "./components/ComplaintList.jsx";
 import CustomerComplaintForm from "./components/CustomerComplaintForm.jsx";
 import EightD from "./components/EightD.jsx";
 import OneD from "./components/OneD.jsx";
+import SupplierSidePage3 from "./components/SupplierSidePage3";
+
+
 import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -146,8 +149,10 @@ function App() {
             }
           />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-        <Route path="/complaint/:id"  element={<EightD />} />
-        <Route path="/EightD/:D" element={<OneD />} /> {/* Handle all D pages dynamically */}
+        <Route path="/complaint/:id"  element={<ComplaintList />} />
+        <Route path="/EightD/:D" element={<EightD />} />
+        <Route path="/OneD/:D" element={<OneD />} />
+        <Route path="/suppliersideD3" element={<SupplierSidePage3 />} />
       </Routes>
     </Router>
     <Toaster />
