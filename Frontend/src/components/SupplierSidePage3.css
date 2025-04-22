@@ -1,0 +1,233 @@
+.supp-container {
+    width: 100%;
+    padding: 16px;
+    font-family: Yeseva One;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+  }
+  
+  .supp-header {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    font-family: Yeseva One;
+    color: #002f5f;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .supp-logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .supp-menu-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: #002f5f;
+    cursor: pointer;
+  }
+  
+  .supp-header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .supp-user-guide {
+    text-decoration: none;
+    color: #002f5f;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .supp-icon {
+    font-size: 18px;
+    color: #002f5f;
+  }
+  
+  .supp-containment-btn {
+    background-color: #1565C0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-family: Yeseva One;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    align-self: flex-start;
+    margin-top: 0;
+  }
+  
+  .supp-main-table,
+  .supp-stock-table {
+    font-family: Roboto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .supp-main-table th,
+  .supp-main-table td,
+  .supp-stock-table th,
+  .supp-stock-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .supp-main-table th {
+    background-color: #EDFAFF;
+  }
+  
+  .supp-main-table input,
+  .supp-stock-table input {
+    width: 100%;
+    padding: 8px;
+    font-family: Roboto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .supp-status-icon {
+    font-size: 20px;
+  }
+  
+  .done {
+    color: green;
+  }
+  
+  .pending {
+    color: orange;
+  }
+  
+  .supp-add-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #1565C0;
+    font-family: Yeseva One;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    padding-right: 10px;
+    margin-top: 0;
+    margin-left: auto;
+  }
+  
+  .supp-plus-icon {
+    font-size: 22px;
+  }
+  
+  .supp-upload-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 12px 20px;
+    font-family: Yeseva One;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 97%;
+  }
+  
+  .supp-upload-icon {
+    font-size: 20px;
+    color: #1565C0;
+    cursor: pointer;
+  }
+  
+  .supp-stock-header {
+    background-color: white;
+    font-family: Yeseva One;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .supp-button-row {
+    display: flex;
+    justify-content: center; /* Center the group */
+    align-items: center;
+    gap: 350px; /* Space between buttons */
+    margin-top: 20px;
+    padding-bottom: 30px;
+    flex-wrap: nowrap; /* Keep buttons on one line */
+  }
+  
+  .supp-next-btn,
+  .supp-submit-btn,
+  .supp-back-btn {
+    width: 160px; /* Fixed width ensures buttons don't break */
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    background-color: #1565C0;
+    color: white;
+    transition: background-color 0.2s ease;
+  }
+  
+  .supp-next-btn:hover,
+  .supp-submit-btn:hover,
+  .supp-back-btn:hover {
+    background-color: #0D47A1;
+  }
+  
+
+  .supp-status-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .supp-status-dropdown {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Roboto;
+    border: 1px solid #ccc;
+  }
+  
+  .supp-status-dropdown.pending {
+    background-color: #fff7e6;
+    border-color: orange;
+  }
+  
+  .supp-status-dropdown.done {
+    background-color: #e6ffed;
+    border-color: green;
+  }
+  
+  .supp-status-dropdown.in\ progress {
+    background-color: #e6f7ff;
+    border-color: #2196F3;
+  }
+  
+  .supp-status-icon.progress {
+    color: #2196F3;
+  }

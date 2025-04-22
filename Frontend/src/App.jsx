@@ -1,23 +1,23 @@
-import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ComplaintList from "./components/ComplaintList.jsx";
 import CustomerComplaintForm from "./components/CustomerComplaintForm.jsx";
 import EightD from "./components/EightD.jsx";
 import OneD from "./components/OneD.jsx";
-import { useAuthStore } from "./store/useAuthStore.js";
+import SupplierSidePage2 from "./components/SupplierSidePage2";
+import SupplierSidePage3 from "./components/SupplierSidePage3";
+
 import { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useAuthStore } from "./store/useAuthStore.js";
 
-import SignUp from "./authentication/SignUp.jsx";
+import ForgotPassword from "./authentication/ForgotPassword.jsx";
 import Login from "./authentication/Login.jsx";
 import OtpVerification from "./authentication/OtpVerification.jsx";
 import OtpVerificationProcess from "./authentication/OtpVerificationprocess.jsx";
-import SetNewPassword from "./authentication/SetNewPassword.jsx";
 import PasswordReset from "./authentication/PasswordReset.jsx";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx"
-import ResetPasswordPage from "./pages/ResetPasswordPage.jsx"
-import Error404 from "./pages/Error404.jsx"
-import ForgotPassword from "./authentication/ForgotPassword.jsx";
-
+import SetNewPassword from "./authentication/SetNewPassword.jsx";
+import SignUp from "./authentication/SignUp.jsx";
+import Error404 from "./pages/Error404.jsx";
 
 // protect routes that require authentication
 const ProtectedRoute = ({children}) => {
@@ -61,8 +61,6 @@ function App() {
     <>
     <Router>
       <Routes>
-
-
           <Route 
             path="/signup" 
             element={
@@ -109,7 +107,6 @@ function App() {
             } 
           />
 
-
           <Route 
             path="/forgot-password"
             element={
@@ -136,7 +133,7 @@ function App() {
           />
 
 
-        {/* <Route path="/" element={<ComplaintList />} /> */}
+        <Route path="/" element={<ComplaintList />} />
         <Route 
             path="/"
             element={
@@ -146,8 +143,11 @@ function App() {
             }
           />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-        <Route path="/complaint/:id"  element={<EightD />} />
-        <Route path="/EightD/:D" element={<OneD />} /> {/* Handle all D pages dynamically */}
+        <Route path="/complaint/:id" element={<EightD />} />
+        <Route path="/EightD/:D" element={<EightD />} />
+        <Route path="/OneD/:D" element={<OneD />} />
+        <Route path="/suppliersideD2" element={<SupplierSidePage2 />} />
+        <Route path="/suppliersideD3" element={<SupplierSidePage3 />} />
       </Routes>
     </Router>
     <Toaster />

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
-
-import { useAuthStore } from "../store/useAuthStore.js";
 import { toast } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import "../components/ComplaintList.jsx";
+import { useAuthStore } from "../store/useAuthStore.js";
+import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { login, error } = useAuthStore();
-
+const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Logging in with", { email, password });
@@ -18,6 +18,7 @@ const Login = () => {
     try {
       await login(email, password);
       toast.success("Logged in successfully!");
+      navigate("/");
     } catch (error) {
       toast.error("Failed to log in");
     }
