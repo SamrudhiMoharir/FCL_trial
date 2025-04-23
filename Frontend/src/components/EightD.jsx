@@ -57,7 +57,6 @@
 // export default EightD;
 
 
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./EightD.css";

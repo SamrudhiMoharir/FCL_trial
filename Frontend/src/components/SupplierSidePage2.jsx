@@ -38,7 +38,7 @@ const SupplierSidePage2 = () => {
           <button type="button" className="plus-button"><FaPlus /></button>
         </div>
 
-        <div className="form-row upload-row">
+        <div className="upload-row">
           <label>Upload Supporting Docs</label>
           <button type="button" className="upload-button"><FaUpload /></button>
         </div>
