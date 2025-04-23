@@ -3,16 +3,9 @@ import ComplaintList from "./components/ComplaintList.jsx";
 import CustomerComplaintForm from "./components/CustomerComplaintForm.jsx";
 import EightD from "./components/EightD.jsx";
 import OneD from "./components/OneD.jsx";
-<<<<<<< HEAD
 import SupplierSidePage2 from "./components/SupplierSidePage2";
 import SupplierSidePage3 from "./components/SupplierSidePage3";
 
-=======
-import SupplierSidePage3 from "./components/SupplierSidePage3";
-
-
-import { useAuthStore } from "./store/useAuthStore.js";
->>>>>>> e35c192ad9d7dd8bba07e7027cf33b4964ab9954
 import { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useAuthStore } from "./store/useAuthStore.js";
@@ -150,16 +143,10 @@ function App() {
             }
           />
         <Route path="/new-complaint" element={<CustomerComplaintForm />} />
-<<<<<<< HEAD
         <Route path="/complaint/:id" element={<EightD />} />
         <Route path="/EightD/:D" element={<EightD />} />
         <Route path="/OneD/:D" element={<OneD />} />
         <Route path="/suppliersideD2" element={<SupplierSidePage2 />} />
-=======
-        <Route path="/complaint/:id"  element={<ComplaintList />} />
-        <Route path="/EightD/:D" element={<EightD />} />
-        <Route path="/OneD/:D" element={<OneD />} />
->>>>>>> e35c192ad9d7dd8bba07e7027cf33b4964ab9954
         <Route path="/suppliersideD3" element={<SupplierSidePage3 />} />
       </Routes>
     </Router>

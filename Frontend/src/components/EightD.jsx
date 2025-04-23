@@ -10,11 +10,7 @@
 //     const data = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8"];
 
 //     const handleNavigation = (item) => {
-<<<<<<< HEAD
 //         navigate(/EightD/${item}); // Navigate to the respective D page
-=======
-//         navigate(`/EightD/${item}`); // Navigate to the respective D page
->>>>>>> e35c192ad9d7dd8bba07e7027cf33b4964ab9954
 //     };
 
 //     return (
@@ -76,17 +72,14 @@ const EightD = () => {
     const handleNavigation = (item) => {
         if (item === "D1") {
             navigate(`/OneD/${item}`); // Navigate to OneD page with dynamic param
-<<<<<<< HEAD
         } 
         else if (item === "D2") {
             navigate("/suppliersideD2"); // Navigate to SupplierSidePage3
         } 
         else if (item === "D3") {
-=======
-        } else if (item === "D3") {
->>>>>>> e35c192ad9d7dd8bba07e7027cf33b4964ab9954
             navigate("/suppliersideD3"); // Navigate to SupplierSidePage3
-        } else {
+        }
+        else {
             navigate(`/EightD/${item}`); // Default navigation for other D's
         }
     };
