@@ -4,6 +4,8 @@ import './SupplierSidePage2.css';
 import { FaPlus, FaArrowLeft, FaUpload } from 'react-icons/fa';
 
 const SupplierSidePage2 = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
   return (
     <div className="supplier-page2">
       <header className="header">
@@ -44,10 +46,18 @@ const SupplierSidePage2 = () => {
         </div>
 
         <div className="form-actions">
-          <button type="button" className="next-step">Next Step</button>
-          <button type="submit" className="submit">Submit</button>
-          <button type="button" className="back-button"><FaArrowLeft /></button>
-        </div>
+  <button type="button" className="back-button" onClick={() => navigate("/OneD/D1")}>
+    <FaArrowLeft />
+  </button>
+  <button type="submit" className="submit">
+    Submit
+  </button>
+  <button type="button" className="next-step" onClick={() => navigate("/suppliersideD3")}>
+    Next Step
+  </button>
+
+  
+</div>
       </form>
     </div>
   );

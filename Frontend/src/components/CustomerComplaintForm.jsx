@@ -93,38 +93,38 @@ const CustomerComplaintForm = () => {
         <h3 className="heading">&nbsp;Customer Name and Address</h3>
 
         <form onSubmit={handleSubmit} className="firstbox">
-          <div className="input-group">
+          <div className="input">
             <label>Company Code</label>
             <input type="text" name="companyCode" onChange={handleChange} required />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Date Raised</label>
             <input type="date" name="dateRaised" onChange={handleChange} required />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Customer Part Number</label>
             <input type="text" name="customerPartNumber" onChange={handleChange} required />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Customer Email</label>
             <input type="email" name="customerEmail" onChange={handleChange} required />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Rejection Quantity</label>
             <input type="number" name="rejectionQuantity" onChange={handleChange} required />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Receipt File</label>
             <input type="file" name="receiptFile" onChange={handleFileChange} />
           </div>
-          <div className="input-group">
+          <div className="input">
             <label>Upload Images/Documents </label>
             <input type="file" name="images" multiple onChange={handleFileChange} />
           </div>
 
           <hr />
 
-          <div className="input-group">
+          <div className="input">
             <h3>Rejection Statement:</h3>
           </div>
 

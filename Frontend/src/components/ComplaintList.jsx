@@ -36,7 +36,7 @@ const ComplaintList = () => {
     <div className="container">
       <div className="form-wrapper">
         <div className="complaint-list-container">
-          <h2 className="title">Complaint List</h2>
+          <h2 className="head">Complaint List</h2>
 
           {/* Filter Buttons */}
           <div className="filter-buttons">

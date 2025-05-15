@@ -70,7 +70,7 @@ html, body {
   }
     
   
-  .input-group {
+  .input {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
@@ -78,7 +78,7 @@ html, body {
   align-items: flex-start;
     
   }
-  .input-group h3{
+  .input h3{
     text-align: left;
     font-size: 20px;
     font-weight: semi bold;
@@ -92,7 +92,7 @@ html, body {
     padding-left: 5px;
     background-color: #EDFAFF;
   }
-  .input-group label {
+  .input label {
     font-weight: bold;
     font-size: 16px;
     margin-top: 5px;
@@ -102,7 +102,7 @@ html, body {
     text-align: left;
   }
   
-  .input-group input {
+  .input input {
     padding: 8px;
     border: 1px solid #545454;
     border-radius: 5px; 

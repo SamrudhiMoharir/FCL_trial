@@ -35,7 +35,7 @@ html, body {
 }
 
 /* Complaint List Title */
-.title {
+.head {
   font-size: 42px;
   font-weight: bold;
   margin-bottom: 10px;

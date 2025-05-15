@@ -150,7 +150,7 @@ body {
   color: white;
   border: none;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
   height: 45px; /* uniform height */
 }
