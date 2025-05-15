@@ -133,7 +133,7 @@ function App() {
           />
 
 
-        <Route path="/" element={<ComplaintList />} />
+        {/* <Route path="/" element={<ComplaintList />} /> */}
         <Route 
             path="/"
             element={
